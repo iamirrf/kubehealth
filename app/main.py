@@ -67,17 +67,21 @@ def metrics():
 
 def run_api():
     """Run the Flask application"""
-    app.run(host='0.0.0.0', port=PORT, debug=False)
+    import os
+    host = os.getenv('HOST', '0.0.0.0')  # Allow host to be configured via environment variable
+    app.run(host=host, port=PORT, debug=False)
 
 if __name__ == '__main__':
     # Try different ports if default is taken
     ports_to_try = [PORT, 8081, 8082, 8083]
+    import os
+    host = os.getenv('HOST', '0.0.0.0')  # Allow host to be configured via environment variable
     for port in ports_to_try:
         try:
-            app.run(host='0.0.0.0', port=port, debug=False)
+            app.run(host=host, port=port, debug=False)
             break
         except OSError:
-            if port == 8083:  # Last port in the list
+            if port == 8083: # Last port in the list
                 print(f"Could not bind to any of the ports: {ports_to_try}")
                 exit(1)
             else:
