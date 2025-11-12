@@ -1,1 +1,2 @@
-# No specific version constraints for now
+# Version constraints for compatibility
+Werkzeug<3.0
