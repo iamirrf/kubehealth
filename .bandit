@@ -1,8 +1,6 @@
-[bandit]
-# Configuration file for bandit security scanner
-
-# Skip test for hardcoded bind to 0.0.0.0 (needed for container accessibility)
-skips = B104
-
-# Other configuration options
-targets = app/
+---
+# Bandit configuration file in YAML format
+profiles:
+  - include_dirs: ['app/']
+    exclude_dirs: []
+    skips: ['B104']  # Skip hardcoded bind to 0.0.0.0 (needed for container accessibility)
