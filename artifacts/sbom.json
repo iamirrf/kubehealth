@@ -1,0 +1,295 @@
+{
+  "components": [
+    {
+      "bom-ref": "requirements-L1",
+      "description": "requirements line 1: Flask==2.3.3",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/Flask/"
+        }
+      ],
+      "name": "Flask",
+      "purl": "pkg:pypi/flask@2.3.3",
+      "type": "library",
+      "version": "2.3.3"
+    },
+    {
+      "bom-ref": "requirements-L5",
+      "description": "requirements line 5: bandit==1.7.5",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/bandit/"
+        }
+      ],
+      "name": "bandit",
+      "purl": "pkg:pypi/bandit@1.7.5",
+      "type": "library",
+      "version": "1.7.5"
+    },
+    {
+      "bom-ref": "requirements-L7",
+      "description": "requirements line 7: black==23.9.1",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/black/"
+        }
+      ],
+      "name": "black",
+      "purl": "pkg:pypi/black@23.9.1",
+      "type": "library",
+      "version": "23.9.1"
+    },
+    {
+      "bom-ref": "requirements-L9",
+      "description": "requirements line 9: cyclonedx-bom>=3.1.2",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/cyclonedx-bom/"
+        }
+      ],
+      "name": "cyclonedx-bom",
+      "purl": "pkg:pypi/cyclonedx-bom",
+      "type": "library"
+    },
+    {
+      "bom-ref": "requirements-L10",
+      "description": "requirements line 10: gunicorn==21.2.0",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/gunicorn/"
+        }
+      ],
+      "name": "gunicorn",
+      "purl": "pkg:pypi/gunicorn@21.2.0",
+      "type": "library",
+      "version": "21.2.0"
+    },
+    {
+      "bom-ref": "requirements-L8",
+      "description": "requirements line 8: isort==5.12.0",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/isort/"
+        }
+      ],
+      "name": "isort",
+      "purl": "pkg:pypi/isort@5.12.0",
+      "type": "library",
+      "version": "5.12.0"
+    },
+    {
+      "bom-ref": "requirements-L3",
+      "description": "requirements line 3: jsonschema==4.19.1",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/jsonschema/"
+        }
+      ],
+      "name": "jsonschema",
+      "purl": "pkg:pypi/jsonschema@4.19.1",
+      "type": "library",
+      "version": "4.19.1"
+    },
+    {
+      "bom-ref": "requirements-L4",
+      "description": "requirements line 4: pytest==7.4.2",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/pytest/"
+        }
+      ],
+      "name": "pytest",
+      "purl": "pkg:pypi/pytest@7.4.2",
+      "type": "library",
+      "version": "7.4.2"
+    },
+    {
+      "bom-ref": "requirements-L2",
+      "description": "requirements line 2: requests==2.31.0",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/requests/"
+        }
+      ],
+      "name": "requests",
+      "purl": "pkg:pypi/requests@2.31.0",
+      "type": "library",
+      "version": "2.31.0"
+    },
+    {
+      "bom-ref": "requirements-L6",
+      "description": "requirements line 6: ruff==0.1.6",
+      "externalReferences": [
+        {
+          "comment": "implicit dist url",
+          "type": "distribution",
+          "url": "https://pypi.org/simple/ruff/"
+        }
+      ],
+      "name": "ruff",
+      "purl": "pkg:pypi/ruff@0.1.6",
+      "type": "library",
+      "version": "0.1.6"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "requirements-L1"
+    },
+    {
+      "ref": "requirements-L10"
+    },
+    {
+      "ref": "requirements-L2"
+    },
+    {
+      "ref": "requirements-L3"
+    },
+    {
+      "ref": "requirements-L4"
+    },
+    {
+      "ref": "requirements-L5"
+    },
+    {
+      "ref": "requirements-L6"
+    },
+    {
+      "ref": "requirements-L7"
+    },
+    {
+      "ref": "requirements-L8"
+    },
+    {
+      "ref": "requirements-L9"
+    }
+  ],
+  "metadata": {
+    "timestamp": "2025-11-12T17:53:34.708041+00:00",
+    "tools": {
+      "components": [
+        {
+          "description": "CycloneDX Software Bill of Materials (SBOM) generator for Python projects and environments",
+          "externalReferences": [
+            {
+              "type": "build-system",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/actions"
+            },
+            {
+              "type": "distribution",
+              "url": "https://pypi.org/project/cyclonedx-bom/"
+            },
+            {
+              "type": "documentation",
+              "url": "https://cyclonedx-bom-tool.readthedocs.io/"
+            },
+            {
+              "type": "issue-tracker",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/issues"
+            },
+            {
+              "type": "license",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/blob/main/LICENSE"
+            },
+            {
+              "type": "release-notes",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/blob/main/CHANGELOG.md"
+            },
+            {
+              "type": "vcs",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/"
+            },
+            {
+              "type": "website",
+              "url": "https://github.com/CycloneDX/cyclonedx-python/#readme"
+            }
+          ],
+          "group": "CycloneDX",
+          "licenses": [
+            {
+              "license": {
+                "acknowledgement": "declared",
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "name": "cyclonedx-py",
+          "type": "application",
+          "version": "7.2.1"
+        },
+        {
+          "description": "Python library for CycloneDX",
+          "externalReferences": [
+            {
+              "type": "build-system",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib/actions"
+            },
+            {
+              "type": "distribution",
+              "url": "https://pypi.org/project/cyclonedx-python-lib/"
+            },
+            {
+              "type": "documentation",
+              "url": "https://cyclonedx-python-library.readthedocs.io/"
+            },
+            {
+              "type": "issue-tracker",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib/issues"
+            },
+            {
+              "type": "license",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/LICENSE"
+            },
+            {
+              "type": "release-notes",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib/blob/main/CHANGELOG.md"
+            },
+            {
+              "type": "vcs",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib"
+            },
+            {
+              "type": "website",
+              "url": "https://github.com/CycloneDX/cyclonedx-python-lib/#readme"
+            }
+          ],
+          "group": "CycloneDX",
+          "licenses": [
+            {
+              "license": {
+                "acknowledgement": "declared",
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "name": "cyclonedx-python-lib",
+          "type": "library",
+          "version": "10.4.1"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:c8b521c1-361c-4e16-a0a2-be892a8e5445",
+  "version": 1,
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6"
+}

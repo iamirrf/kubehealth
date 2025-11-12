@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - RANDOM_SEED=42
+      - PORT=8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  monitor:
+    build: .
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      - API_BASE_URL=http://api:8080
+      - RANDOM_SEED=42
+    volumes:
+      - ./:/app/reports
+    command: >
+      sh -c "
+      python -c '
+      import time
+      from app.monitor import run_monitor
+      # Wait for API to be ready
+      time.sleep(10)
+      report = run_monitor()
+      print(\"Monitor completed successfully\")
+      '
+      "

@@ -1,0 +1,64 @@
+{
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "total_jobs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "successful_jobs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "failed_jobs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "running_jobs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pending_jobs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "jobs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string"},
+          "status": {
+            "type": "string",
+            "enum": ["success", "failed", "running", "pending"]
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pipeline_type": {
+            "type": "string",
+            "enum": ["build", "test", "deploy"]
+          }
+        },
+        "required": ["name", "status", "timestamp", "duration", "pipeline_type"]
+      }
+    }
+  },
+  "required": [
+    "timestamp",
+    "total_jobs",
+    "successful_jobs",
+    "failed_jobs",
+    "running_jobs",
+    "pending_jobs",
+    "jobs"
+  ]
+}

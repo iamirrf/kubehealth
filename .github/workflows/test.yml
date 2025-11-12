@@ -1,0 +1,73 @@
+name: Test and Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt -c constraints.txt
+
+    - name: Run linter
+      run: |
+        ruff check app
+
+    - name: Run security scan
+      run: |
+        bandit -r app
+
+    - name: Run tests
+      run: |
+        pytest --junitxml=./test-results/junit.xml
+
+    - name: Build Docker image
+      run: |
+        docker build -t kubehealth .
+
+    - name: Generate SBOM
+      run: |
+        cyclonedx-py -j -o ./artifacts/sbom.json || echo "SBOM generation failed"
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: ./test-results/
+
+    - name: Upload SBOM
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: sbom
+        path: ./artifacts/sbom.json
+
+    - name: Upload audit log
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: audit-log
+        path: ./AUDIT_LOG.txt
