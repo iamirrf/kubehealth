@@ -1,6 +1,6 @@
----
 # Bandit configuration file in YAML format
 profiles:
-  - include_dirs: ['app/']
+  default:
+    include_dirs: ['app/']
     exclude_dirs: []
     skips: ['B104']  # Skip hardcoded bind to 0.0.0.0 (needed for container accessibility)
