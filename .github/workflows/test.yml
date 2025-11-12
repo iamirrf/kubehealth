@@ -41,6 +41,7 @@ jobs:
 
     - name: Run tests
       run: |
+        export PYTHONPATH=.
         pytest --junitxml=./test-results/junit.xml
 
     - name: Build Docker image
