@@ -37,7 +37,7 @@ jobs:
 
     - name: Run security scan
       run: |
-        bandit -c .bandit -r app
+        bandit -c .bandit -r app -lll
 
     - name: Run tests
       run: |
