@@ -52,21 +52,21 @@ jobs:
         cyclonedx-py -j -o ./artifacts/sbom.json || echo "SBOM generation failed"
 
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results
         path: ./test-results/
 
     - name: Upload SBOM
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: sbom
         path: ./artifacts/sbom.json
 
     - name: Upload audit log
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: audit-log
